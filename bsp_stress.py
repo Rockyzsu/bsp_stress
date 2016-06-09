@@ -6,9 +6,12 @@ def nvflash_fun():
 
 
     #wait_device_cmd=['adb','wait-for-device']
+    filename="uart.log"
+    ft=open(filename,'a')
+
     wait_device_cmd=["adb shell dmesg"]
 
-    result=subprocess.Popen(wait_device_cmd,shell=True,stdout=subprocess.PIPE)
+    result=subprocess.Popen(wait_device_cmd,shell=True,stdout=ft)
     #result.wait()
     stdout1=result.communicate()
     print "Now print result"
